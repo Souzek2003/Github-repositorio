@@ -8,12 +8,21 @@ public class Bateria1_Ejercicio4 {
 
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Introduce número 1: ");
-        int num1 = teclado.nextInt();
-        System.out.println("Introduce número 2: ");
-        int num2 = teclado.nextInt();
-        System.out.println("Introduce número 3: ");
-        int num3 = teclado.nextInt();
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
+
+        try {
+            System.out.println("Introduce número 1: ");
+            num1 = teclado.nextInt();
+            System.out.println("Introduce número 2: ");
+            num2 = teclado.nextInt();
+            System.out.println("Introduce número 3: ");
+            num3 = teclado.nextInt();
+
+        } catch (Exception e) {
+            System.out.println("Debe ser formato numérico");
+        }
 
         if (num1 == num2 || num2 == num3 || num1 == num3) {
             System.out.println("ERROR: hay números introducidos que son iguales");

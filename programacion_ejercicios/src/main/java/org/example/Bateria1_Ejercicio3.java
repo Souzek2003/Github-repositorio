@@ -8,8 +8,11 @@ public class Bateria1_Ejercicio3 {
 
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Introduce un número: ");
-        int num = teclado.nextInt();
+        int num;
+
+        try {
+            System.out.println("Introduce un número: ");
+            num = teclado.nextInt();
 
         if (num > 0) {
             System.out.println("El número " + num + " es positivo");
@@ -22,6 +25,10 @@ public class Bateria1_Ejercicio3 {
 
         if (num < 0) {
             System.out.println("El número " + num + " es negativo");
+        }
+
+        } catch (Exception e) {
+            System.out.println("Debe ser formato numérico");
         }
 
 
