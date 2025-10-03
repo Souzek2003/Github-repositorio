@@ -33,5 +33,7 @@ public class multiplicaciones_3_cifras {
         System.out.println(multiplicandonum + "xx");
         System.out.println("--------");
         System.out.println(multiplicandonum*multiplicadornum);
+
+        //cambio
     }
 }
