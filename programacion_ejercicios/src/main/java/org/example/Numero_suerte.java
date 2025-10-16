@@ -11,13 +11,14 @@ public class Numero_suerte {
         int num1=0;
         int num2=0;
         int num3=0;
+        String fecha="";
         String fecha_1 = "";
         String fecha_2= "";
         String fecha_3= "";
 
         try {
             System.out.println("Introduce tu fecha de nacimiento (dd/mm/aaaa): ");
-            String fecha = teclado.nextLine();
+            fecha = teclado.nextLine();
 
             fecha_1 = fecha.substring(0,2);
             fecha_2 = fecha.substring(3,5);
@@ -27,13 +28,13 @@ public class Numero_suerte {
             num2 = Integer.parseInt(fecha_2);
             num3 = Integer.parseInt(fecha_3);
 
-            if (fecha.length() > 10){
-                System.out.println("Excedes el límite. Puedes introducir hasta un máximo de 10 caracteres.");
-            }
-
         } catch (Exception e) {
             System.out.println("Formato incorrecto");
         }
+
+        if (fecha.length() > 10){
+            System.out.println("Excedes el límite. Puedes introducir hasta un máximo de 10 caracteres.");
+        }else{
 
         int suma = (num1+num2+num3);
 
@@ -55,4 +56,5 @@ public class Numero_suerte {
         System.out.println(suerte1 + "+" + suerte2 + "+" + suerte3 + "+" + suerte4 + " = " + suma_final);
         System.out.println("Tu número de la suerte es " + suma_final);
     }
+}
 }
