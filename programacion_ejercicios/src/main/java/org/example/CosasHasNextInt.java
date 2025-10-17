@@ -16,7 +16,7 @@ public class CosasHasNextInt {
             System.out.println("Formato incorrecto. No es un número.");
         }
 
-        int numero = 1;
+        int numero = 2;
         char caracter = 'A';
         String palabra = "Patricia";
 
