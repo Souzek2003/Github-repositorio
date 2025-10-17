@@ -1,5 +1,6 @@
 package org.example;
 
+import java.lang.classfile.instruction.SwitchCase;
 import java.util.Scanner;
 
 public class CosasHasNextInt {
@@ -15,6 +16,18 @@ public class CosasHasNextInt {
             System.out.println("Formato incorrecto. No es un número.");
         }
 
+        int numero = 1;
+        char caracter = 'A';
+        String palabra = "Patricia";
 
+        switch (numero){
+
+            case 1:
+            System.out.println("El alumno es Raul");
+            break;
+            case 2:
+                System.out.println("La profe es patricia");
+                break;
+        }
     }
 }
