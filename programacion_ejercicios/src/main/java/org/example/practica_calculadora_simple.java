@@ -28,6 +28,7 @@ public class practica_calculadora_simple {
         if (!operacion.equalsIgnoreCase("r")) {
             System.out.println("> Introduce el segundo operando: ");
             operando2 = teclado.nextInt();
+        }
 
         switch (operacion.toLowerCase()){
             case "+":
@@ -48,7 +49,6 @@ public class practica_calculadora_simple {
                 return;
             default:
                 System.out.println("Formato incorrecto.");
-        }
         }
 
         System.out.println("El resultado de " + operando1 + " " + operacion + " " + operando2 + " es " + resultado);
