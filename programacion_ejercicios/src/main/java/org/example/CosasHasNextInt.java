@@ -1,6 +1,5 @@
 package org.example;
 
-import java.lang.classfile.instruction.SwitchCase;
 import java.util.Scanner;
 
 public class CosasHasNextInt {
@@ -23,10 +22,13 @@ public class CosasHasNextInt {
         switch (numero){
 
             case 1:
-            System.out.println("El alumno es Raul");
-            break;
+                System.out.println("El alumno es Raul");
+               break;
             case 2:
                 System.out.println("La profe es patricia");
+                break;
+            default:
+                System.out.println("No sé el nombre");
                 break;
         }
     }
