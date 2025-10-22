@@ -31,7 +31,10 @@ public class practica_calculadora_simple {
         System.out.println("Elige una operación: ");
         String operacion = teclado.next();
         try {
-            if (!operacion.equalsIgnoreCase("r")) {
+            if (operacion.equalsIgnoreCase("+")
+                    || operacion.equalsIgnoreCase("-")
+                    || operacion.equalsIgnoreCase("x")
+                    || operacion.equalsIgnoreCase("/")) {
                 System.out.println("> Introduce el segundo operando: ");
                 operando2 = teclado.nextInt();
             }
