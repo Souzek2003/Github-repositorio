@@ -62,16 +62,16 @@ public class practica_ISBN {
                 String isbn_9 = isbn.substring(8,9);
                 String isbn_10 = isbn.substring(9,10);
 
-                int num1 = Integer.parseInt(isbn_1);
-                int num2 = Integer.parseInt(isbn_2);
-                int num3 = Integer.parseInt(isbn_3);
-                int num4 = Integer.parseInt(isbn_4);
-                int num5 = Integer.parseInt(isbn_5);
-                int num6 = Integer.parseInt(isbn_6);
-                int num7 = Integer.parseInt(isbn_7);
-                int num8 = Integer.parseInt(isbn_8);
-                int num9 = Integer.parseInt(isbn_9);
-                int num10 = Integer.parseInt(isbn_10);
+                int num1 = isbn_1.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_1);
+                int num2 = isbn_2.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_2);
+                int num3 = isbn_3.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_3);
+                int num4 = isbn_4.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_4);
+                int num5 = isbn_5.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_5);
+                int num6 = isbn_6.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_6);
+                int num7 = isbn_7.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_7);
+                int num8 = isbn_8.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_8);
+                int num9 = isbn_9.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_9);
+                int num10 = isbn_10.equalsIgnoreCase("X") ? 10 : Integer.parseInt(isbn_10);
 
                 int multi1 = (10*num1);
                 int multi2 = (9*num2);
@@ -86,9 +86,7 @@ public class practica_ISBN {
 
                 int suma_final = (multi1+multi2+multi3+multi4+multi5+multi6+multi7+multi8+multi9+multi10);
 
-                String suma = Integer.toString(suma_final);
-
-                if (suma % 11){
+                if (suma_final % 11 == 0){
                     System.out.println("El ISBN es válido");
                 }else{
                     System.out.println("El ISBN no es válido");
