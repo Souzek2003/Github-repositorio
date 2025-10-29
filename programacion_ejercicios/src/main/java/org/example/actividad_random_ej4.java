@@ -10,12 +10,20 @@ public class actividad_random_ej4 {
 
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+        int longitud = aleatorio.nextInt(5)+8;
         String contrasenya = "";
 
-        for (int i=0;i<12;i++){
+        contrasenya+="ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(aleatorio.nextInt(26));
+        contrasenya+="abcdefghijklmnopqrstuvwxyz".charAt(aleatorio.nextInt(26));
+        contrasenya+="0123456789".charAt(aleatorio.nextInt(10));
+
+
+        for (int i=3;i<longitud;i++){
             contrasenya += caracteres.charAt(aleatorio.nextInt(caracteres.length()-1));
+
         }
 
-        System.out.println("La contraseña de 12 dígitos generada es: " + contrasenya);
+        System.out.println(contrasenya);
+
     }
 }
