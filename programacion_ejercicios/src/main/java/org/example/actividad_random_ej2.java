@@ -12,7 +12,7 @@ public class actividad_random_ej2 {
 
         String contrasenya = "";
 
-        for (int i=8;i<12;i++){
+        for (int i=0;i<12;i++){
             contrasenya += caracteres.charAt(aleatorio.nextInt(caracteres.length()-1));
         }
 
