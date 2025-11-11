@@ -75,54 +75,54 @@ public class practica_samurais {
             }
         }while (contador != 3);
 
+        //Este aleatorío generará un número al azar que corresponderá al samurai iniciante en batalla.
         int batalla = aleatorio.nextInt(7);
 
-        //Ahora empezaremos la parte del enfrentamiento
         System.out.println("¡Empieza la batalla!");
-        //Creamos un numero aleatorio del 0 al 6 debido que esas son las posiciones de los samurais
-        System.out.println("La batalla empieza con el samurai " + batalla);
-        //Bucle para que empiece del numero aleatorio al 7
+        System.out.println("La batalla inicia con el samurai " + (batalla+1));
+
+        //Bucle for que recorrerá los 7 samurais consecutivamente, según por el número que se haya elegido al azar (batalla).
+        //Cuando un equipo pierda, se sumará a las bajas.
         for (int i=batalla;i<7;i++){
-            //Numero de los samurais
-            samurai=0;
-            //Para ver que equipo gana
             if (equipo1[i]>equipo2[i]) {
-                samurai = 1+i;
+                samurai = i+1;
                 System.out.println("Samurai " + samurai + "." + " Gana Equipo 1. " + equipo1[i] + " vs " + equipo2[i]);
-                //Sumamos 1 a las bajas del equipo perdedor
                 bajaseq2++;
             }else{
                 if (equipo1[i]<equipo2[i]){
-                    //Lo mismo pero para el otro equipo
-                    samurai = 1+i;
+                    samurai = i+1;
                     System.out.println("Samurai " + samurai + "." + " Gana Equipo 2. " + equipo1[i] + " vs " + equipo2[i]);
                     bajaseq1++;
                 }
             }
         }
-        //Bucle de 0 a iniciar-1, lo mismo que el anterior pero desde 0 a iniciar-1
-        for (int i =0;i<batalla;i++){
-            samurai=0;
+        //Otro bucle for que seguirá el orden consecutivo inicializado en 0.
+        for (int i=0;i<batalla;i++){
             if (equipo1[i]>equipo2[i]) {
-                samurai = 1+i;
+                samurai = i+1;
                 System.out.println("Samurai " + samurai + "." + " Gana Equipo 1. " + equipo1[i] + " vs " + equipo2[i]);
                 bajaseq2++;
             }else{
                 if (equipo1[i]<equipo2[i]){
-                    samurai = 1+i;
+                    samurai =i+1;
                     System.out.println("Samurai " + samurai + "." + " Gana Equipo 2. " + equipo1[i] + " vs " + equipo2[i]);
                     bajaseq1++;
                 }
             }
         }
-        //Ver quiene es el ganador
+
+
+        //Resultados finales, muestra quién es el ganador y cuántas bajas hubieron en el equipo perdedor.
         if (bajaseq1<bajaseq2){
             System.out.println("¡Equipo 1 GANA! Equipo 2 ha tenido " + bajaseq2 + " bajas");
         }else{
             if (bajaseq1>bajaseq2) {
                 System.out.println("¡Equipo 2 GANA! Equipo 1 ha tenido " + bajaseq1 + " bajas");
+            }
         }
-        }
+
+
+
 
     }
 }
