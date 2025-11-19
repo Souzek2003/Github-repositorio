@@ -26,7 +26,7 @@ public class practica_primitiva {
         boolean formato = datos.matches("\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}/\\d{1,2}");
 
         if (formato == false) {
-            System.out.println("Formato incorrecto. (1-2-49-6-8-9/7).");
+            System.out.println("Formato incorrecto. (1-20-49-6-8-9/7).");
             return;
         }
 
@@ -75,7 +75,7 @@ public class practica_primitiva {
         }
 
         System.out.println("");
-        System.out.println("RESULTADOS");
+        System.out.println("RESULTADOS:");
         System.out.println(aciertos + " aciertos");
 
 
