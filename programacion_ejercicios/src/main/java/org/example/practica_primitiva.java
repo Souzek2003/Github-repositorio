@@ -86,6 +86,7 @@ public class practica_primitiva {
             }
         }
 
+        //Mostramos por pantalla el boleto del usuario y el boleto premiado.
         System.out.println(Arrays.toString(numusr));
 
         System.out.println("Ha salido:");
@@ -93,6 +94,8 @@ public class practica_primitiva {
         System.out.println("Complementario: " + complementario);
         System.out.println("Reintegro: " + reintegro);
 
+
+        //Convertimos numusr de String a int creando el nuevo vector (numusrint) con el bucle for.
         int numusrint[] = new int[numusr.length];
         for (int i=0;i<numusr.length;i++){
             numusrint[i] = Integer.parseInt(numusr[i]);
