@@ -57,7 +57,7 @@ public class practica_primitiva {
         }
 
 
-        //Creamos reintegro y complementario, que generará también serán generados al azar.
+        //Creamos reintegro y complementario, que también serán generados al azar.
         //Reintegro generará un número al azar del 0-9.
         //Complementario generará un número al azar del 1-49.
         int reintegro = aleatorio.nextInt(10);
@@ -86,7 +86,8 @@ public class practica_primitiva {
             }
         }
 
-        //Mostramos por pantalla el boleto del usuario y el boleto premiado.
+        //Mostramos por pantalla el boleto del usuario y el boleto premiado junto al
+        //número complementario y el reintegro.
         System.out.println(Arrays.toString(numusr));
 
         System.out.println("Ha salido:");
@@ -94,32 +95,29 @@ public class practica_primitiva {
         System.out.println("Complementario: " + complementario);
         System.out.println("Reintegro: " + reintegro);
 
-
-        //Convertimos numusr de String a int creando el nuevo vector (numusrint) con el bucle for.
+        //Pasamos el String numusr a int (numusrint) para que podamos sumar los aciertos del boleto del
+        //usuario.
         int numusrint[] = new int[numusr.length];
         for (int i=0;i<numusr.length;i++){
             numusrint[i] = Integer.parseInt(numusr[i]);
         }
 
+        //Bucle for que recorrerá el boleto del usuario y los números premiados.
+        //Cada vez que el usuario haya acertado un número premiado, se sumará al contador aciertos.
         for (int i=0;i<numeros.length;i++){
-            for (int j=0;j<numusrint.length;j++)
-            if (numeros[i]==numusrint[j])
-                aciertos++;
+            for (int j=0;j<numusrint.length;j++){
+                if (numeros[i]==numusrint[j])
+                    aciertos++;
             }
-
-
-        int numeros2[] = new int[1];
-
-        for (int i=0;i<numeros2.length;i++){
-            numeros2[i] = aleatorio.nextInt(49)+1;
         }
 
-        System.out.println("");
+        //Mostraremos por pantalla los resultados con los aciertos del usuario.
+        System.out.println();
         System.out.println("RESULTADOS");
         System.out.println(aciertos + " aciertos");
 
-
-
+        //Bucle for que recorrerá el boleto del usuario y lo comparará con
+        //el número complementario del número premiado. Si coincide, su valor será 1.
         int acierto_complementario = 0;
         for(int i=0;i<numusrint.length;i++){
             if (numusrint[i]==complementario){
@@ -127,6 +125,15 @@ public class practica_primitiva {
             }
         }
 
+        //Premios divididos por categorías según los aciertos del usuario.
+        //Si el usuario acierta 6 números + reintegro, obtendrá la categoría especial.
+        //Si el usuario acierta 6 números, obtendrá la 1ª categoría.
+        //Si el usuario acierta 5 números + complementario, obtendrá la 2ª categoría.
+        //Si el usuario acierta 5 números, obtendrá la 3ª categoría.
+        //Si el usuario acierta 4 números, obtendrá la 4ª categoría.
+        //Si el usuario acierta 3 números, obtendrá la 5ª categoría.
+        //Si el usuario solo acierta el reintegro, el programa mostrará que acertó el reintegro.
+        //De lo contrario, si el usuario no obtiene ninguna categoría, no será premiado.
         if (aciertos == 6 && reintegrousr==reintegro) {
             System.out.println("Categoría Especial: Has acertado 6 números y el reintegro.");
         } else if (aciertos == 6) {
