@@ -16,7 +16,6 @@ public class Ejercicio4_Matrices {
 
         teclado.nextLine();
         String notas[][] = new String[alumnos+1][asignaturas+1];
-
         notas[0][0] = "Estudiantes";
 
         for (int i=1;i<notas.length;i++){
@@ -31,7 +30,7 @@ public class Ejercicio4_Matrices {
 
         for (int i=1;i<notas.length;i++){
             for (int j=1;j<notas[i].length;j++){
-                System.out.println("Introduce la nota de " + notas[i][0] + " para la asignatura de " + notas);
+                System.out.println("Introduce la nota de " + notas[i][0] + " para la asignatura de " + notas[0][i]);
                 notas[i][j] = teclado.next();
             }
         }
@@ -41,6 +40,23 @@ public class Ejercicio4_Matrices {
                 System.out.print(valor + " ");
             }
             System.out.println();
+        }
+
+        int suma_notas=0;
+        for (int i=0;i<notas.length;i++){
+            suma_notas=0;
+            for (int j=0;j<notas[i].length;j++){
+                suma_notas+=Integer.parseInt(notas[i][j]);
+            }
+            System.out.println("La nota media del alumno " + notas[i][0] + " es " + (double) (suma_notas/asignaturas));
+        }
+
+        for (int i=0;i<notas[0].length;i++){
+            suma_notas=0;
+            for (int j=0;j<notas.length;j++){
+                suma_notas+=Integer.parseInt(notas[i][j]);
+            }
+            System.out.println("La nota media en la asignatura de " + notas[0][i] + " es " + (double) (suma_notas/alumnos));
         }
 
 
